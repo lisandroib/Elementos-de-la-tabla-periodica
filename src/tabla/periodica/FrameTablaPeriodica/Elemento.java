@@ -18,7 +18,7 @@ import org.json.JSONObject;
 public class Elemento {
     public void buscar(){
        try{
-            String api="https://periodictableapi.herokuapp.com/api/getElement/byName/"+Buscador.jTextField1.getText();
+            String api="https://neelpatel05.pythonanywhere.com/element/atomicname?atomicname="+Buscador.jTextField1.getText();
             URL url= new URL(api);
             HttpURLConnection con= (HttpURLConnection)url.openConnection();
             con.setRequestMethod("GET");
@@ -41,11 +41,11 @@ public class Elemento {
                 ventana.setVisible(true);
                 
                 FrameElemento.jNombre1.setText(jsonObject.getString("name"));
-                FrameElemento.jConfElect.setText(jsonObject.getString("electronConfiguration"));
-                FrameElemento.jNAtomico1.setText(jsonObject.getString("atomicNumber"));
+                FrameElemento.jConfElect.setText(jsonObject.getString("electronicConfiguration"));
+                FrameElemento.jNAtomico1.setText(String.valueOf(jsonObject.getInt("atomicNumber")));
                 FrameElemento.jNMasico.setText(jsonObject.getString("atomicMass"));
-                FrameElemento.jNOxidacion.setText(jsonObject.getString("oxidationNumbers"));
-                FrameElemento.jClass1.setText(jsonObject.getString("class"));
+                FrameElemento.jNOxidacion.setText(jsonObject.getString("oxidationStates"));
+                FrameElemento.jClass1.setText(jsonObject.getString("bondingType"));
                 FrameElemento.jSimbolo1.setText(jsonObject.getString("symbol"));
                 
                 
