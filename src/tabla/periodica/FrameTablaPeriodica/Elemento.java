@@ -4,10 +4,12 @@
  */
 package tabla.periodica.FrameTablaPeriodica;
 
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 import org.json.JSONObject;
+
 
 /**
  *
@@ -33,7 +35,7 @@ public class Elemento {
                 while(leer.hasNext()){
                     informationString.append(leer.nextLine());
                 }
-                //System.out.println(informationString);
+
                 JSONObject jsonObject= new JSONObject(informationString.toString());
                 FrameElemento ventana= new FrameElemento();
                 ventana.setVisible(true);
